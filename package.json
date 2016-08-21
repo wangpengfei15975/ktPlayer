@@ -1,0 +1,26 @@
+{
+  "name": "ktPlayer",
+  "version": "1.0.2",
+  "description": "a simple HTML5 video player",
+  "main": "./dist/ktPlayer.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangpengfei15975/ktPlayer"
+  },
+  "keywords": [
+    "html5",
+    "video",
+    "player"
+  ],
+  "author": "Scott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangpengfei15975/ktPlayer/issues"
+  },
+  "homepage": "https://github.com/wangpengfei15975/ktPlayer#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0"
+  }
+}
