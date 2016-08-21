@@ -185,6 +185,7 @@
             _this.target.querySelector('.ktPlayer-layer').style.display = 'none';
             _this.target.querySelector('.ktPlayer-icon-play').addEventListener('click',_this.buttonPlay);
             video.addEventListener('click',_this.videoPlay);
+            _this.target.querySelector('.ktPlayer-pause').addEventListener('click',_this.videoPlay);
         },
         buttonPlay:function(){
             var button = _this.target.querySelector('.ktPlayer-icon-play');
