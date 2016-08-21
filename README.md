@@ -1,5 +1,5 @@
 # ktPlayer
-[![npm](https://img.shields.io/npm/v/ktPlayer.svg)]() [![npm](https://img.shields.io/npm/dt/ktPlayer.svg)]() [![npm](https://img.shields.io/npm/l/ktPlayer.svg)]()  
+[![npm](https://img.shields.io/npm/v/ktPlayer.svg)]() [![npm](https://img.shields.io/npm/dt/ktPlayer.svg)]() [![npm](https://img.shields.io/npm/l/ktPlayer.svg)]() [![npm](https://img.shields.io/badge/made%20by-Scott-orange.svg)]()  
 a simple HTML5 video player  
 一款基于HTML5的web视频播放器  
 
@@ -13,7 +13,7 @@ a simple HTML5 video player
 
 `npm install ktPlayer`  
 
-方式2：复制出该项目下的dist文件夹下的文件  
+方式2：引入该项目下的dist文件夹  
 
 ---
 

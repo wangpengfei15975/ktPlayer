@@ -1,6 +1,6 @@
 {
   "name": "ktPlayer",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "a simple HTML5 video player",
   "main": "./dist/ktPlayer.min.js",
   "repository": {
