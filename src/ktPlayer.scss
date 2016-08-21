@@ -141,7 +141,7 @@ $background:rgba(28,28,28,.9);
   }
   .ktPlayer-controller{
     height:41px;
-    padding:0 20px;
+    margin:0 20px;
     position:absolute;
     left:0;
     right:0;
@@ -276,7 +276,7 @@ $background:rgba(28,28,28,.9);
     .ktPlayer-controller-left{
       height:38px;
       position:absolute;
-      left:20px;
+      left:0;
       bottom:0;
       .ktPlayer-icon{
         padding:7px;
@@ -285,19 +285,19 @@ $background:rgba(28,28,28,.9);
     .ktPlayer-controller-right{
       height:38px;
       position:absolute;
-      right:20px;
+      right:0;
       bottom:0;
       .ktPlayer-icon{
         padding:4px;
       }
     }
     .ktPlayer-bar-wrap{
-      width:calc(100% - 40px);
+      width:100%;
       height:3px;
       padding:5px 0;
       cursor:pointer;
       position:absolute;
-      left:20px;
+      left:0;
       bottom:33px;
       &:hover{
         .ktPlayer-bar{
