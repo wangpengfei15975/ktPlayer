@@ -235,6 +235,7 @@
         end:function(){
             var button = _this.target.querySelector('.ktPlayer-icon-play');
             _this.changeSVG(button,svg.play);
+            _this.hideController();
         },
         bindSpeedRate:function(){
             var item = _this.target.querySelectorAll('.ktPlayer-setting-item');
