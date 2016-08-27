@@ -119,6 +119,7 @@ $background:rgba(28,28,28,.9);
     }
   }
   &.ktPlayer-controller-hide{
+    cursor:none;
     .ktPlayer-controller-mask{
       @include transform(translateY(100%));
     }

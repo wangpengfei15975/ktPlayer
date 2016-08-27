@@ -128,7 +128,7 @@
                 HTMLContent+= '                    <div class="ktPlayer-setting-item" data-speed="2">2</div>';
                 HTMLContent+= '                </div>';
                 HTMLContent+= '            </div>';
-                HTMLContent+= '            <button class="ktPlayer-icon ktPlayer-icon-fullscreen">';
+                HTMLContent+= '            <button class="ktPlayer-icon ktPlayer-icon-fullscreen" data-on="0">';
                 HTMLContent+= '                <svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">';
                 HTMLContent+= '                    <g transform="scale(0.03125, 0.03125)">';
                 HTMLContent+= '                        <path d="M65.422222 145.066667 321.422222 145.066667 321.422222 216.177778 139.377778 216.177778 139.377778 401.066667 65.422222 401.066667ZM59.733333 867.555556 59.733333 611.555556 128 611.555556 128 793.6 315.733333 793.6 315.733333 867.555556ZM958.577778 867.555556 705.422222 867.555556 705.422222 796.444444 887.466667 796.444444 887.466667 608.711111 958.577778 608.711111ZM961.422222 147.911111 961.422222 403.911111 890.311111 403.911111 890.311111 221.866667 702.577778 221.866667 702.577778 147.911111Z" fill="#fff"></path>';
@@ -177,9 +177,14 @@
             this.target.querySelector('.ktPlayer-icon-fullscreen').addEventListener('mouseenter',this.SVGFullscreenMouseenter);
             this.target.querySelector('.ktPlayer-icon-fullscreen').addEventListener('mouseleave',this.SVGFullscreenMouseleave);
             this.target.addEventListener('mousemove',this.hideController);
+            this.target.addEventListener('mouseleave',this.hideController);
             this.target.querySelector('.ktPlayer-controller').addEventListener('mouseenter',this.controllerMouseenter);
             this.target.querySelector('.ktPlayer-controller').addEventListener('mouseleave',this.controllerMouseleave);
             document.addEventListener('keydown',this.keyBoard);
+            document.addEventListener("fullscreenchange", this.fullscreenchange);
+            document.addEventListener("webkitfullscreenchange", this.fullscreenchange);
+            document.addEventListener("mozfullscreenchange", this.fullscreenchange);
+            document.addEventListener("MSFullscreenChange", this.fullscreenchange);
         },
         canPlay:function(){
             _this.target.querySelector('.ktPlayer-layer').style.display = 'none';
@@ -274,7 +279,6 @@
                     }else if(_this.target.msRequestFullscreen){
                         _this.target.msRequestFullscreen();
                     }
-                    button.querySelector('path').setAttribute('d',svg.full_on);
                 }else{
                     if(document.exitFullscreen){
                         document.exitFullscreen();
@@ -285,7 +289,6 @@
                     }else if(document.msExitFullscreen){
                         document.msExitFullscreen();
                     }
-                    button.querySelector('path').setAttribute('d',svg.full_off);
                 }
             //},10);
         },
@@ -444,6 +447,17 @@
         },
         controllerMouseleave:function(){
             _this.target.addEventListener('mousemove',_this.hideController);
+        },
+        fullscreenchange:function(){
+            var button = _this.target.querySelector('.ktPlayer-icon-fullscreen');
+            var sign = button.getAttribute('data-on');
+            if(sign === '1'){
+                button.setAttribute('data-on','0');
+                button.querySelector('path').setAttribute('d',svg.full_off);
+            }else{
+                button.setAttribute('data-on','1');
+                button.querySelector('path').setAttribute('d',svg.full_on);
+            }
         }
     };
     window.KTPlayer = KTPlayer;
